@@ -1,6 +1,6 @@
 ## An implementation of a matrix that caches its inverse to avoid unnecessary computation.
 
-## construct a matrix 
+## construct a CacheMatrix out of an ordinary matrix. The inverse is initially not computed. 
 makeCacheMatrix <- function(x=numeric()) {
 	# pseudo-object's private members go here
 	mat <- x
@@ -21,7 +21,7 @@ makeCacheMatrix <- function(x=numeric()) {
 }
 
 
-## compute the inverse of the matrix x, optional arguments get passed along to solve
+## compute the inverse of the matrix x, cache the result. optional arguments get passed along to solve
 
 cacheSolve <- function(x,...) {
 	mat <- x$get()
